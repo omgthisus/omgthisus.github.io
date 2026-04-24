@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
-<body>
-<video autoplay playsinline></video>
+<body style="margin:0">
+
+<video autoplay playsinline style="width:100%"></video>
 
 <script>
 navigator.mediaDevices.getUserMedia({ video: true })
-  .then(stream => {
-    document.querySelector('video').srcObject = stream;
-  });
+.then(stream => {
+  document.querySelector("video").srcObject = stream;
+})
+.catch(err => {
+  alert("Camera blocked: " + err);
+});
 </script>
+
 </body>
 </html>
