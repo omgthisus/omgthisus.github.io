@@ -1,31 +1,24 @@
 <!DOCTYPE html>
 <html>
-<body style="font-family:Arial; padding:20px;">
+<head>
+  <meta charset="utf-8">
+  <title>AR test</title>
 
-<h2>Camera test</h2>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+</head>
 
-<p id="status">⏳ Initialisation...</p>
+<body style="margin:0; overflow:hidden;">
 
-<video id="video" autoplay playsinline style="width:100%; max-width:500px;"></video>
+<a-scene
+  embedded
+  arjs="sourceType: webcam; debugUIEnabled: true;"
+>
 
-<script>
-const status = document.getElementById("status");
+  <a-box position="0 0 -3" color="red"></a-box>
 
-if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-  status.innerText = "❌ Camera API not supported in this browser";
-} else {
-  status.innerText = "📡 Requesting camera permission...";
-
-  navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-      status.innerText = "✅ Camera ON";
-      document.getElementById("video").srcObject = stream;
-    })
-    .catch(err => {
-      status.innerText = "❌ Error: " + err.name + " - " + err.message;
-    });
-}
-</script>
+  <a-entity camera></a-entity>
+</a-scene>
 
 </body>
 </html>
