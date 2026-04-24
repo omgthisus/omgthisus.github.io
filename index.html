@@ -7,6 +7,24 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/three.js/build/ar-nft.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
+  <script>
+AFRAME.registerComponent('markerhandler', {
+  init: function () {
+    const el = this.el;
+
+    el.addEventListener('markerFound', () => {
+      // SON
+      const audio = new Audio('sound.mp3');
+      audio.play();
+
+      // REDIRECTION après 1.5 sec
+      setTimeout(() => {
+        window.location.href = "uuus.html";
+      }, 1500);
+    });
+  }
+});
+</script>
 </head>
 
 <body style="margin:0; overflow:hidden;">
