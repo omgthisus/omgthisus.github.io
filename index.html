@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>AR test</title>
+  <title>AR FIX</title>
 
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
@@ -12,8 +12,9 @@
 
 <a-scene
   vr-mode-ui="false"
+  renderer="logarithmicDepthBuffer: true;"
   embedded
-  arjs="sourceType: webcam; debugUIEnabled: true; detectionMode: mono_and_matrix;"
+  arjs="sourceType: webcam; debugUIEnabled: true;"
 >
 
   <a-box position="0 0 -3" color="red"></a-box>
