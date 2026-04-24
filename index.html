@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
-<body style="margin:0">
+<body style="font-family:Arial; padding:20px;">
 
-<video autoplay playsinline style="width:100%"></video>
+<h2>Camera test</h2>
+
+<p id="status">⏳ Initialisation...</p>
+
+<video id="video" autoplay playsinline style="width:100%; max-width:500px;"></video>
 
 <script>
-navigator.mediaDevices.getUserMedia({ video: true })
-.then(stream => {
-  document.querySelector("video").srcObject = stream;
-})
-.catch(err => {
-  alert("Camera blocked: " + err);
-});
+const status = document.getElementById("status");
+
+if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+  status.innerText = "❌ Camera API not supported in this browser";
+} else {
+  status.innerText = "📡 Requesting camera permission...";
+
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+      status.innerText = "✅ Camera ON";
+      document.getElementById("video").srcObject = stream;
+    })
+    .catch(err => {
+      status.innerText = "❌ Error: " + err.name + " - " + err.message;
+    });
+}
 </script>
 
 </body>
