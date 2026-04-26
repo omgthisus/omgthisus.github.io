@@ -45,5 +45,15 @@
   +1000 bisous
 </div>
 
+
+<script>
+  window.addEventListener("load", () => {
+    const audio = new Audio('Jingle.m4a');
+    audio.play().catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
+  });
+</script>
+  
 </body>
 </html>
