@@ -14,10 +14,10 @@ AFRAME.registerComponent('markerhandler', {
 
     el.addEventListener('markerFound', () => {
       // SON
-      const audio = new Audio('sound.m4a');
+      const audio = new Audio('Jingle.m4a');
       audio.play();
 
-      // REDIRECTION après 1.5 sec
+      // REDIRECTION après 2 sec
       setTimeout(() => {
         window.location.href = "./uuus.html";
       }, 2000);
