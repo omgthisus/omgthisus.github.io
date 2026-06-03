@@ -94,14 +94,19 @@ function checkAnswer() {
     .toLowerCase()
     .trim();
 
-  if(answer === "2204") {
+ if(
+  answer === "Zénith" ||
+  answer === "Zenith"  ||
+  answer === "Zenith Paris"  ||
+  answer === "Zénith Paris" 
+) {
 
-    window.location.href = "nextpage.html";
+    window.location.href = "NBT.html";
 
   } else {
 
     document.getElementById("result").innerHTML =
-      "❌ Lieu inconnu...";
+      "⚠ Trop de voleurs...";
   }
 }
 </script>
