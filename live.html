@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LIVE</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+body {
+  background: black;
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+.chat-box {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.message {
+  border: 2px solid fuchsia;
+  padding: 15px;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.user {
+  color: lightblue;
+}
+
+.reply-area {
+  margin-top: 40px;
+}
+
+textarea {
+  width: 80%;
+  max-width: 700px;
+  height: 100px;
+  background: black;
+  color: white;
+  border: 2px solid fuchsia;
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: 2px solid fuchsia;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+}
+
+button:hover {
+  background: fuchsia;
+  color: black;
+}
+
+.secret-input {
+  width: 70%;
+  max-width: 500px;
+  padding: 12px;
+  background: black;
+  color: white;
+  border: 2px solid fuchsia;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 20px;
+}
+
+#result {
+  margin-top: 20px;
+  color: lightblue;
+}
+</style>
+</head>
+
+
+<script>
+function checkAnswer() {
+
+  let answer =
+    document.getElementById("answer")
+    .value
+    .toLowerCase()
+    .trim();
+
+  if(answer === "2204") {
+
+    window.location.href = "nextpage.html";
+
+  } else {
+
+    document.getElementById("result").innerHTML =
+      "❌ Lieu inconnu...";
+  }
+}
+</script>
+  
+<body>
+
+<h1>🔴 LIVE</h1>
+
+<div class="chat-box">
+
+  <div class="message">
+    <span class="user">[ANONYMOUS]</span><br><br>
+    J’ai entendu dire qu’on avait vu des chiens errer dans le coin...
+  </div>
+
+  <div class="message">
+    <span class="user">[ANONYMOUS]</span><br><br>
+    Encore ?! Il va bien falloir qu’on les attrape un jour ! Et si on leur tendait un piège ?
+  </div>
+
+  <div class="message">
+    <span class="user">[ANONYMOUS]</span><br><br>
+    Bonne idée.<br><br>
+    Rendez-vous le 12 janvier 2027 — dans le plus grand secret !
+  </div>
+
+  <div class="message">
+    <span class="user">[ANONYMOUS]</span><br><br>
+    Bien ! Mais où nous retrouvons-nous ?
+  </div>
+
+</div>
+
+<div class="reply-area">
+
+  <p>Bien ! Mais où nous retrouvons-nous ?</p>
+
+  <input
+    type="text"
+    id="answer"
+    placeholder="écrire ici..."
+    class="secret-input">
+
+  <br>
+
+  <button onclick="checkAnswer()">
+    ENVOYER
+  </button>
+
+  <p id="result"></p>
+
+</div>
+
+</body>
+</html>
