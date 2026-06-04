@@ -1,1 +1,87 @@
+.thumb {
+  width: 200px;
+  margin: 15px;
+  border: 2px solid fuchsia;
+  cursor: pointer;
+}
 
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: black;
+  border: 3px solid fuchsia;
+  padding: 20px;
+  text-align: center;
+}
+
+.popup-content img {
+  max-width: 500px;
+  max-height: 70vh;
+}
+
+#popup-date {
+  color: lightblue;
+  margin-top: 15px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  background: black;
+  color: white;
+  border: 2px solid fuchsia;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+}
+
+
+<div class="gallery">
+
+  <img src="photo1.jpg"
+       class="thumb"
+       onclick="openPopup('photo1.jpg', '22 avril 2024')">
+
+  <img src="photo2.jpg"
+       class="thumb"
+       onclick="openPopup('photo2.jpg', '14 juillet 2024')">
+
+</div>
+
+<div id="popup" class="popup" onclick="closePopup()">
+
+  <div class="popup-content" onclick="event.stopPropagation()">
+
+    <img id="popup-img" src="">
+    <p id="popup-date"></p>
+
+    <button onclick="closePopup()">FERMER</button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+function openPopup(photo, date) {
+
+  document.getElementById("popup-img").src = photo;
+  document.getElementById("popup-date").innerHTML = date;
+
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+
+  document.getElementById("popup").style.display = "none";
+}
+
+</script>
