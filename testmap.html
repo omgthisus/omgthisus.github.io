@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kissmap!!!2</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script id="kml-data" type="application/xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+    <Folder>
+        <Placemark>
+            <name>25 Rue Jussieu</name>
+            <Point>
+                <coordinates>2.3540259,48.846657,0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Fondue 9</name>
+            <Point>
+                <coordinates>2.3622106,48.8240098,0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark>
+            <name>Brigade de Sapeurs-Pompiers de Paris - Caserne Masséna</name>
+            <Point>
+                <coordinates>2.3748997,48.8226533,0</coordinates>
+            </Point>
+        </Placemark>
+    </Folder>
+</Document>
+</kml>
+</script>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/togeojson@0.16.0"></script>
+
+<script>
+// 1. Créer la carte
+const map = L.map('map').setView([48.8566, 2.3522], 12);
+
+// 2. Ajouter le fond de carte OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// 3. Définir une icône personnalisée (orange, style Maki)
+const orangeIcon = L.icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+// 4. Lire et parser le KML
+const kmlText = document.getElementById("kml-data").textContent;
+const parser = new DOMParser();
+const xml = parser.parseFromString(kmlText, "application/xml");
+
+// 5. Convertir le KML en GeoJSON
+const geojson = toGeoJSON.kml(xml);
+
+// 6. Ajouter les marqueurs à la carte avec l'icône orange
+L.geoJSON(geojson, {
+    pointToLayer: function (feature, latlng) {
+        return L.marker(latlng, { icon: orangeIcon })
+            .bindPopup(`<b>${feature.properties.name}</b>`);
+    }
+}).addTo(map);
+
+// 7. Zoomer sur les données
+map.fitBounds(L.geoJSON(geojson).getBounds());
+</script>
+
+</body>
+</html>
