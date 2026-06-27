@@ -373,13 +373,8 @@ const geojson = toGeoJSON.kml(xml);
 
 // Add it to the map
 const layer = L.geoJSON(geojson, {
-    pointToLayer: function(feature, latlng) {
+    pointToLayer: function (feature, latlng) {
         return L.marker(latlng);
-    },
-    onEachFeature: function(feature, layer) {
-        if (feature.properties && feature.properties.name) {
-            layer.bindPopup(feature.properties.name);
-        }
     }
 }).addTo(map);
 
