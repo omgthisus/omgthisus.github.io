@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kissmap!!!2</title>
-
-    <link rel="stylesheet"
-          href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
+    <title>Kissmap!!!3</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <style>
         html, body {
             margin: 0;
             height: 100%;
         }
-
         #map {
             width: 100%;
             height: 100vh;
@@ -25,363 +21,74 @@
 <div id="map"></div>
 
 <script id="kml-data" type="application/xml">
-
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document id="1ODj78AokPje79rhmwd30M4KSlK8hQbzW">
-	<name>Kissmap</name>
-	<Schema name="__managed_schema" id="__managed_schema">
-		<SimpleField type="string" name="str:bm9t">
-			<displayName>nom</displayName>
-		</SimpleField>
-		<SimpleField type="string" name="str:ZGVzY3JpcHRpb24=">
-			<displayName>description</displayName>
-		</SimpleField>
-	</Schema>
-	<gx:CascadingStyle kml:id="__managed_style_0A3B5EAEF7403FE393D6_highlight">
-		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
-		<Style>
-			<IconStyle>
-				<scale>1.2</scale>
-				<Icon>
-					<href>https://earth.google.com/earth/document/icon?color=e65100&amp;id=1899&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff0051e6</color>
-				<width>0.9</width>
-			</LineStyle>
-			<PolyStyle>
-				<color>4d0051e6</color>
-			</PolyStyle>
-			<BalloonStyle>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<StyleMap id="__managed_style_0A3B5EAEF7403FE393D6">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6_normal</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6_highlight</styleUrl>
-		</Pair>
-	</StyleMap>
-	<gx:CascadingStyle kml:id="__managed_style_0FF63FA9B6403FE393D8_highlight">
-		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
-		<Style>
-			<IconStyle>
-				<scale>1.2</scale>
-				<Icon>
-					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff2dc0fb</color>
-				<width>3</width>
-			</LineStyle>
-			<BalloonStyle>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<gx:CascadingStyle kml:id="__managed_style_0FF63FA9B6403FE393D8_normal">
-		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
-		<Style>
-			<IconStyle>
-				<Icon>
-					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff2dc0fb</color>
-				<width>2</width>
-			</LineStyle>
-			<BalloonStyle>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<gx:CascadingStyle kml:id="__managed_style_0A3B5EAEF7403FE393D6_normal">
-		<styleUrl>https://earth.google.com/balloon_components/base/1.1.0.0/card_template.kml#main</styleUrl>
-		<Style>
-			<IconStyle>
-				<Icon>
-					<href>https://earth.google.com/earth/document/icon?color=e65100&amp;id=1899&amp;scale=4</href>
-				</Icon>
-				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
-			</IconStyle>
-			<LabelStyle>
-			</LabelStyle>
-			<LineStyle>
-				<color>ff0051e6</color>
-				<width>0.6</width>
-			</LineStyle>
-			<PolyStyle>
-				<color>4d0051e6</color>
-			</PolyStyle>
-			<BalloonStyle>
-			</BalloonStyle>
-		</Style>
-	</gx:CascadingStyle>
-	<StyleMap id="__managed_style_0FF63FA9B6403FE393D8">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#__managed_style_0FF63FA9B6403FE393D8_normal</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#__managed_style_0FF63FA9B6403FE393D8_highlight</styleUrl>
-		</Pair>
-	</StyleMap>
-	<Folder id="14f1ae6b_0">
-		<name>Calque sans titre</name>
-		<open>1</open>
-		<styleUrl>#__managed_style_0FF63FA9B6403FE393D8</styleUrl>
-		<Placemark id="14f1ae6b_5D1D85DE29B99155">
-			<name>25 Rue Jussieu</name>
-			<description><![CDATA[<div><b>nom</b>: 25 Rue Jussieu</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e671e54520a4c1:0xc07592d4de5daee6</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">25 Rue Jussieu</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3540259,48.846657,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D866F8BCB6805">
-			<name>Fondue 9</name>
-			<description><![CDATA[<div><b>nom</b>: Fondue 9</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e6719964343045:0xf1963760f6a5252e</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Fondue 9</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3622106,48.82400980000001,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D870A2908A61E">
-			<name>Brigade de Sapeurs-Pompiers de Paris - Caserne Masséna</name>
-			<description><![CDATA[<div><b>nom</b>: Brigade de Sapeurs-Pompiers de Paris - Caserne Masséna</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e673f8f69cc2c3:0x577b73f07478bbd4</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Brigade de Sapeurs-Pompiers de Paris - Caserne Masséna</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3748997,48.8226533,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8803443996C1">
-			<name>Le Jardin des Pâtes</name>
-			<description><![CDATA[<div><b>nom</b>: Le Jardin des Pâtes</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e671efd6799067:0xb5c16f7b15baafd7</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Le Jardin des Pâtes</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.354375,48.84376899999999,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D88B5228BE3DF">
-			<name>Rue Michel Breal</name>
-			<description><![CDATA[<div><b>nom</b>: Rue Michel Breal</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Rue Michel Breal</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3712959,48.82202980000001,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D89678871FDC2">
-			<name>Le Charles Quint</name>
-			<description><![CDATA[<div><b>nom</b>: Le Charles Quint</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e67103f518c29f:0x4dfe5e730f5f5bf</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Le Charles Quint</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3331918,48.8410567,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8A2D1DAA2D84">
-			<name>Il Gigolo</name>
-			<description><![CDATA[<div><b>nom</b>: Il Gigolo</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e671e0ee68382d:0xcab4613d70aa1a9</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Il Gigolo</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3460186,48.8528709,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8B5985113D08">
-			<name>3 Av. Guy Môquet</name>
-			<description><![CDATA[<div><b>nom</b>: 3 Av. Guy Môquet</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e60b272803ec9d:0x452ce1a9c17f52a</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">3 Av. Guy Môquet</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.4736099,48.73982409999999,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8B9EFC8D7859">
-			<name>Salle Pleyel</name>
-			<description><![CDATA[<div><b>nom</b>: Salle Pleyel</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e66feaac6cf0bd:0x94c1fc2d9a91f965</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Salle Pleyel</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3010508,48.8770037,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8C4655A56005">
-			<name>Place du Panthéon</name>
-			<description><![CDATA[<div><b>nom</b>: Place du Panthéon</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Place du Panthéon</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3456603,48.84677599999999,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8CBF3AB6C14D">
-			<name>La Filmothèque du Quartier Latin</name>
-			<description><![CDATA[<div><b>nom</b>: La Filmothèque du Quartier Latin</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e671dd940689c3:0xa39e1cd48dea4980</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">La Filmothèque du Quartier Latin</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.34281,48.849543,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D8F7762016C01">
-			<name>Studio Luna Rossa</name>
-			<description><![CDATA[<div><b>nom</b>: Studio Luna Rossa</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e67224b3e0b135:0x9c5b8d5edce5099d</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Studio Luna Rossa</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3785511,48.8306376,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D90AF821B5D67">
-			<name>2 Vla Saïd</name>
-			<description><![CDATA[<div><b>nom</b>: 2 Vla Saïd</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e66ff5d99214c5:0x9e53750eac4bf837</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">2 Vla Saïd</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.2804023,48.87288419999999,0</coordinates>
-			</Point>
-		</Placemark>
-		<Placemark id="14f1ae6b_5D1D916B34451F33">
-			<name>Jardin des Plantes</name>
-			<description><![CDATA[<div><b>nom</b>: Jardin des Plantes</div><div><b>description</b>: <i>empty</i></div>]]></description>
-			<gx:fid>0x47e671f19bf8db69:0x10843dfd839e8aae</gx:fid>
-			<styleUrl>#__managed_style_0A3B5EAEF7403FE393D6</styleUrl>
-			<ExtendedData>
-				<SchemaData schemaUrl="#__managed_schema">
-					<SimpleData name="str:bm9t">Jardin des Plantes</SimpleData>
-				</SchemaData>
-			</ExtendedData>
-			<Point>
-				<coordinates>2.3595996,48.84396209999999,0</coordinates>
-			</Point>
-		</Placemark>
-	</Folder>
+    <name>Kissmap</name>
+    <Folder id="14f1ae6b_0">
+        <name>Calque sans titre</name>
+        <open>1</open>
+        <Placemark id="14f1ae6b_5D1D85DE29B99155">
+            <name>25 Rue Jussieu</name>
+            <Point>
+                <coordinates>2.3540259,48.846657,0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="14f1ae6b_5D1D866F8BCB6805">
+            <name>Fondue 9</name>
+            <Point>
+                <coordinates>2.3622106,48.82400980000001,0</coordinates>
+            </Point>
+        </Placemark>
+        <Placemark id="14f1ae6b_5D1D870A2908A61E">
+            <name>Brigade de Sapeurs-Pompiers de Paris - Caserne Masséna</name>
+            <Point>
+                <coordinates>2.3748997,48.8226533,0</coordinates>
+            </Point>
+        </Placemark>
+    </Folder>
 </Document>
 </kml>
 </script>
-
-
-
-<!-- ========================================================= -->
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://unpkg.com/togeojson@0.16.0"></script>
 
 <script>
-// Create the map
-const map = L.map('map').setView([48.8566, 2.3522], 6);
+// 1. Créer la carte
+const map = L.map('map').setView([48.8566, 2.3522], 12);
 
-// OpenStreetMap background
+// 2. Ajouter le fond de carte OpenStreetMap
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-// Read the embedded KML
-const kmlText = document.getElementById("kml-data").textContent;
+// 3. Définir une icône personnalisée (ici, l'icône orange du KML)
+const customIcon = L.icon({
+    iconUrl: 'https://earth.google.com/earth/document/icon?color=e65100&id=1899&scale=4',
+    iconSize: [32, 32], // Taille de l'icône
+    iconAnchor: [16, 32], // Point d'ancrage (centre en bas)
+    popupAnchor: [0, -32] // Position de la popup par rapport à l'icône
+});
 
-// Parse the XML
+// 4. Lire et parser le KML
+const kmlText = document.getElementById("kml-data").textContent;
 const parser = new DOMParser();
 const xml = parser.parseFromString(kmlText, "application/xml");
 
-// Convert KML to GeoJSON
+// 5. Convertir le KML en GeoJSON
 const geojson = toGeoJSON.kml(xml);
 
-// Add it to the map
-const layer = L.geoJSON(geojson, {
+// 6. Ajouter les marqueurs à la carte avec l'icône personnalisée
+L.geoJSON(geojson, {
     pointToLayer: function (feature, latlng) {
-        return L.marker(latlng);
+        return L.marker(latlng, { icon: customIcon })
+            .bindPopup(`<b>${feature.properties.name}</b>`);
     }
 }).addTo(map);
 
-// Zoom to the KML
-if (layer.getBounds().isValid()) {
-    map.fitBounds(layer.getBounds());
-}
+// 7. Zoomer sur les données
+map.fitBounds(L.geoJSON(geojson).getBounds());
 </script>
 
 </body>
