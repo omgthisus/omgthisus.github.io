@@ -1,9 +1,39 @@
 <!DOCTYPE html>
-<html>
-
-<iframe
-  src="https://www.google.com/maps/d/embed?mid=TON_ID_DE_CARTE"
-  width="640"
-  height="480">
-</iframe>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Carte Google Maps</title>
+    <style>
+        /* Style pour la vignette */
+        .map-container {
+            width: 100%;
+            max-width: 800px; /* Taille maximale de la vignette */
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 400px; /* Hauteur fixe pour la vignette */
+            border: none;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ma Carte Personnalisée</h1>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/d/u/0/edit?mid=1QjaojYanxaWF-KAaP9Q1-X2ob0H8GpM&usp=sharing"
+            allowfullscreen
+            loading="lazy">
+        </iframe>
+    </div>
+</body>
 </html>
